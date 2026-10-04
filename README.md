@@ -1,27 +1,61 @@
-# Черновик README — годовой проект (тема 14)
+# 📈 Сервис по конструированию портфеля <br>и анализу активов
+<span style="font-size: 1.7em; line-height: 0.6 "> (рынок — Московская биржа, MOEX).</span>
 
-## Итоговая тема
-
-**Сервис по конструированию портфеля и анализу активов** (рынок — Московская биржа, MOEX).
+***
 
 Сервис помогает инвестору собрать портфель акций под свой риск-профиль и горизонт, оценить риски входящих в него активов и проверить стратегию на исторических данных. Проект состоит из двух связанных блоков: конструирование портфеля и аналитика с прогнозированием.
 
 Уровень: base/middle. План ниже — базовый, с запланированными расширениями до middle.
 
-## Команда и куратор
+## 👥 Команда и куратор
+<hr>
+<table border="0" style="border-collapse: collapse; border: 0;">
+  <tr style="border: 0;">
+    <td style="border: 0;">Александр</td>
+    <td style="border: 0;">
+      <a href="https://t.me/hunger104"><img src="https://img.shields.io/badge/Telegram-2B99E2?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/hunger104"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+  <tr style="border: 0;">
+    <td style="border: 0;">Анна</td>
+    <td style="border: 0;">
+      <a href="https://t.me/annkozl"><img src="https://img.shields.io/badge/Telegram-0BAD69?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/annkozl"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+  <tr style="border: 0;">
+    <td style="border: 0;">Павел</td>
+    <td style="border: 0;">
+      <a href="https://t.me/PavelFyord"><img src="https://img.shields.io/badge/Telegram-37E22B2?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/PavelFyord"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+  <tr style="border: 0;">
+    <td style="border: 0;">Андрей</td>
+    <td style="border: 0;">
+      <a href="https://t.me/Maximovex"><img src="https://img.shields.io/badge/Telegram-AD510B?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/Maximovex"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+<tr style="border: 0;">
+<td valign="middle" style="border: 0;">
+<b style="font-color: #0bad69;">Куратор:</b> <br> Александр Голубев
+    </td>    
+<td valign="middle" style="border: 0;">
+      <img src="https://img.shields.io/badge/Telegram-8A2BE2?style=for-the-badge&logo=telegram&logoColor=white" alt="icon" />
+    </td>
+    
+  </tr>
+</table>
 
-| Участник | GitHub |
-| --- | --- |
-| Александр | [@hunger104](https://github.com/hunger104) |
-| Анна | [@annkozl](https://github.com/annkozl) |
-| Павел | [@PavelFyord](https://github.com/PavelFyord) |
-| Андрей | [@Maximovex](https://github.com/Maximovex) |
-
-**Куратор:** Александр Голубев.
-
+<hr>
+<table border="0" style="border-collapse: collapse; border: 0;">
+  
+</table>
 Роли распределим позже. Каждый участник собирает и готовит свою часть данных.
 
-## Состав проекта
+## 🧩 Состав проекта
 
 Каждый компонент разделён на три уровня: «Обязательно» — без этого не закрыть чекпойнты; «Опционально» — делаем, если хватает времени; «Middle» — при переходе на уровень middle. Расширение до middle бывает двух типов: **расширение** — новые методы в уже готовом модуле; **отдельная задача** — новый кусок работы со своим пайплайном.
 
@@ -57,7 +91,7 @@
 
 Обязательно: FastAPI, PostgreSQL через ORM, Docker, деплой на VPS, тесты. Опционально: регулярное обновление данных с биржи.
 
-## План работы
+## 📅 План работы
 
 Даты после КТ1 ориентировочные. Пометка «middle» — выполняется при переходе на уровень middle. Пометка «опционально» — делаем, если хватает времени.
 
@@ -82,7 +116,7 @@
 8. **КТ7. Финальные доработки — ~10 июня.** MLflow, воспроизводимость, анализ ошибок, стресс-тесты на кризисных периодах.
 9. **Итоговая защита — 13–20 июня.**
 
-## Что не входит в проект
+## 🚫 Что не входит в проект
 
 | Пункт | Причина |
 | --- | --- |
