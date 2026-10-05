@@ -1,10 +1,10 @@
-# MOEX Portfolio Risk Service
+# 📈 MOEX Portfolio Risk Service
 
 > **Сервис прогнозирования риска акций и конструирования инвестиционного портфеля на данных Московской биржи**
 
 ---
 
-## Итоговая тема
+## 📌 Итоговая тема
 
 **Сервис конструирования инвестиционного портфеля с прогнозированием риска акций на данных Московской биржи.**
 
@@ -16,7 +16,7 @@
 
 ---
 
-## Как устроена идея проекта
+## 💡 Как устроена идея проекта
 
 ```text
 Данные Московской биржи
@@ -62,24 +62,79 @@ FastAPI-сервис
 
 ---
 
-## Состав команды
 
-| Участник | GitHub |
-|:---|:---|
-| **Александр** | [@hunger104](https://github.com/hunger104) |
-| **Анна** | [@annkozl](https://github.com/annkozl) |
-| **Павел** | [@PavelFyord](https://github.com/PavelFyord) |
-| **Андрей** | [@Maximovex](https://github.com/Maximovex) |
+## 🧩 Состав проекта
 
-### Куратор
+Итоговая ML-модель и модуль формирования портфеля будут доступны через API на **FastAPI**.
 
-**Александр Голубев**
+### Блок A. Конструирование портфеля
 
+| Компонент | Обязательно | Опционально | Middle |
+| --- | --- | --- | --- |
+| Выбор активов | Состав IMOEX, кастомный список | Фильтры по сектору и ликвидности | — |
+| Риск-профиль | Три профиля (осторожный, средний, агрессивный) как ограничения оптимизации | — | — |
+| Горизонт и ребалансировка | Ежемесячная ребалансировка | Выбор между месяцем и кварталом | — |
+| Методы сборки портфеля | Равные веса, минимальный риск, Марковиц, Risk Parity | Сглаживание оценки ковариаций (Ledoit-Wolf) | Black-Litterman, факторные модели, робастная оптимизация |
+| Дивидендный портфель | — | Оптимизация с учётом ожидаемой дивидендной доходности; купоны облигаций — как известный денежный поток | — |
+
+### Блок B. Аналитика и прогнозирование
+
+
+### Сервис
+
+Обязательно: FastAPI, PostgreSQL через ORM, Docker, деплой на VPS, тесты. Опционально: регулярное обновление данных с биржи.
+---
+## 👥 Состав команды
+
+<table border="0" style="border-collapse: collapse; border: 0;">
+  <tr style="border: 0;">
+    <td style="border: 0;">Александр</td>
+    <td style="border: 0;">
+      <a href="https://t.me/hunger104"><img src="https://img.shields.io/badge/Telegram-2B99E2?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/hunger104"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+  <tr style="border: 0;">
+    <td style="border: 0;">Анна</td>
+    <td style="border: 0;">
+      <a href="https://t.me/annkozl"><img src="https://img.shields.io/badge/Telegram-0BAD69?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/annkozl"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+  <tr style="border: 0;">
+    <td style="border: 0;">Павел</td>
+    <td style="border: 0;">
+      <a href="https://t.me/PavelFyord"><img src="https://img.shields.io/badge/Telegram-37E22B2?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/PavelFyord"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+  <tr style="border: 0;">
+    <td style="border: 0;">Андрей</td>
+    <td style="border: 0;">
+      <a href="https://t.me/Maximovex"><img src="https://img.shields.io/badge/Telegram-AD510B?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
+      <a href="https://github.com/Maximovex"><img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
+    </td>
+  </tr>
+<tr style="border: 0;">
+<td valign="middle" style="border: 0;">
+<b style="font-color: #0bad69;">Куратор:</b> <br> Александр Голубев
+    </td>    
+<td valign="middle" style="border: 0;">
+      <img src="https://img.shields.io/badge/Telegram-8A2BE2?style=for-the-badge&logo=telegram&logoColor=white" alt="icon" />
+    </td>
+    
+  </tr>
+</table>
+
+<hr>
+<table border="0" style="border-collapse: collapse; border: 0;">
+  
+</table>
 Распределение ролей внутри команды будет определено на старте работы над следующим этапом проекта.
 
 ---
 
-## План работы
+## 📅 План работы
 
 План проекта соответствует основным чекпойнтам годового проекта.
 
@@ -97,7 +152,7 @@ FastAPI-сервис
 
 ---
 
-## Что хотим получить в результате
+## 🎯 Что хотим получить в результате
 
 К концу проекта планируется получить:
 
@@ -111,7 +166,7 @@ FastAPI-сервис
 
 ---
 
-## Основной принцип проекта
+## 🔑 Основной принцип проекта
 
 > **Сначала проверяем качество данных и модели, затем используем прогноз в портфельной стратегии и только после этого оптимизируем сервис.**
 
@@ -119,7 +174,7 @@ FastAPI-сервис
 
 ---
 
-## Ограничения
+## ⚠️ Ограничения
 
 Проект является исследовательским и учебным. Получаемые прогнозы и сформированные портфели не являются индивидуальными инвестиционными рекомендациями.
 
