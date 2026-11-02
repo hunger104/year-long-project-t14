@@ -1,1 +1,16 @@
-.idea
+# IDE
+.idea/
+.vscode/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+.env.*
+
+# Generated datasets
+/data/raw/*.csv
+/data/processed/*.csv
