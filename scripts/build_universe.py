@@ -1,6 +1,5 @@
-"""Строит universe.csv: состав IMOEX + сектор, тип акции (обыкновенная/привилегированная).
+"""Строит universe.csv: состав IMOEX + сектор, тип акции (обыкновенная/привилегированная)."""
 
-"""
 from pathlib import Path
 
 import pandas as pd
@@ -49,8 +48,11 @@ def iss(path: str, table: str, **params) -> pd.DataFrame:
 
 
 def index_members(code: str) -> pd.DataFrame:
-    return iss(f"statistics/engines/stock/markets/index/analytics/{code}.json",
-               "analytics", limit=100)
+    return iss(
+        f"statistics/engines/stock/markets/index/analytics/{code}.json",
+        "analytics",
+        limit=100,
+    )
 
 
 def main() -> None:
@@ -60,27 +62,34 @@ def main() -> None:
     tickers = sorted(imoex["ticker"])
 
     sector = {}
-    for code, name in reversed(list(SECTOR_INDEXES.items())):  # высший приоритет пишется последним
+    for code, name in reversed(
+        list(SECTOR_INDEXES.items())
+    ):  # высший приоритет пишется последним
         for t in index_members(code)["ticker"]:
             sector[t] = name
     sector.update({t: s for t, s in MANUAL_SECTOR.items() if t not in sector})
 
-    board = iss(f"engines/stock/markets/shares/boards/{BOARD}/securities.json",
-                "securities", securities=",".join(tickers))
+    board = iss(
+        f"engines/stock/markets/shares/boards/{BOARD}/securities.json",
+        "securities",
+        securities=",".join(tickers),
+    )
     board = board.set_index("SECID")
     missing = [t for t in tickers if t not in board.index]
     if missing:
         raise SystemExit(f"нет на {BOARD}: {missing}")
 
-    df = pd.DataFrame({
-        "secid": tickers,
-        "shortname": [board.at[t, "SHORTNAME"] for t in tickers],
-        "boardid": BOARD,
-        "sector": [sector.get(t) for t in tickers],
-        # SECTYPE: 1 — обыкновенная, 2 — привилегированная
-        "is_pref": [int(str(board.at[t, "SECTYPE"]) == "2") for t in tickers],
-        "snapshot_date": snapshot,
-    })
+    df = pd.DataFrame(
+        {
+            "secid": tickers,
+            "shortname": [board.at[t, "SHORTNAME"] for t in tickers],
+            "boardid": BOARD,
+            "sector": [sector.get(t) for t in tickers],
+            # SECTYPE: 1 — обыкновенная, 2 — привилегированная
+            "is_pref": [int(str(board.at[t, "SECTYPE"]) == "2") for t in tickers],
+            "snapshot_date": snapshot,
+        }
+    )
     out = BASE / "config" / "universe.csv"
     out.parent.mkdir(exist_ok=True)
     df.to_csv(out, index=False, encoding="utf-8")
