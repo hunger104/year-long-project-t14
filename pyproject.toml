@@ -22,6 +22,9 @@ dev = [
 data = [
     "requests>=2.34.2",
 ]
+notebooks = [
+    "ipykernel>=7.4.0",
+]
 
 [tool.uv]
 default-groups = ["dev"]
